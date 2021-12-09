@@ -3,12 +3,11 @@ import java.util.Scanner;
 public class ArrayListP2 {
 
     static Scanner leia = new Scanner(System.in);
+    public static Campos c = new Campos();
 
     public static void main(String[] args) {
 
         int resp, i = 0;
-
-        Campos c = new Campos();
 
         System.out.println("Escolha a opção desejada \n"
                 + "1-Cadastrar um imóvel \n"
@@ -51,7 +50,6 @@ public class ArrayListP2 {
     public static void salvar() {
 
         int i = 0;
-        Campos c = new Campos();
 
         System.out.println(" CÓDIGO ");
         c.setCod(leia.nextInt());
@@ -63,23 +61,23 @@ public class ArrayListP2 {
         c.setBairro(leia.next());
         System.out.println(" STATUS ");
         c.setStatus(leia.next());
-        Campos.vet.add(c);
+
+        c.vet.add(c);
     }
 
     public static void buscaralugados() {
 
         int i = 0;
-        Campos c = new Campos();
-        String alugadop="alugado";
+        String alugadop = "alugado";
 
         System.out.println("IMÓVEIS ALUGADOS");
-        if (alugadop.equalsIgnoreCase(Campos.vet.get(i).getStatus())) {
+        if (alugadop.equalsIgnoreCase(c.vet.get(i).getStatus())) {
             System.out.println("______________________________________");
-            System.out.println("CÓDIGO=" + Campos.vet.get(i).getCod());
-            System.out.println("TIPO=" + Campos.vet.get(i).getTipo());
-            System.out.println("ALUGUEL=" + Campos.vet.get(i).getAluguel());
-            System.out.println("BAIRRO=" + Campos.vet.get(i).getBairro());
-            System.out.println("STATUS=" + Campos.vet.get(i).getStatus());
+            System.out.println("CÓDIGO=" + c.vet.get(i).getCod());
+            System.out.println("TIPO=" + c.vet.get(i).getTipo());
+            System.out.println("ALUGUEL=" + c.vet.get(i).getAluguel());
+            System.out.println("BAIRRO=" + c.vet.get(i).getBairro());
+            System.out.println("STATUS=" + c.vet.get(i).getStatus());
             System.out.println("______________________________________");
         }
     }
@@ -87,17 +85,16 @@ public class ArrayListP2 {
     public static void buscardisponiveis() {
 
         int i = 0;
-        Campos c = new Campos();
-        String disponivelp="disponivel";
+        String disponivelp = "disponivel";
 
         System.out.println("IMÓVEIS DISPONÍVEIS");
-        if (disponivelp.equalsIgnoreCase(Campos.vet.get(i).getStatus())) {
+        if (disponivelp.equalsIgnoreCase(c.vet.get(i).getStatus())) {
             System.out.println("______________________________________");
-            System.out.println("CÓDIGO=" + Campos.vet.get(i).getCod());
-            System.out.println("TIPO=" + Campos.vet.get(i).getTipo());
-            System.out.println("ALUGUEL=" + Campos.vet.get(i).getAluguel());
-            System.out.println("BAIRRO=" + Campos.vet.get(i).getBairro());
-            System.out.println("STATUS=" + Campos.vet.get(i).getStatus());
+            System.out.println("CÓDIGO=" + c.vet.get(i).getCod());
+            System.out.println("TIPO=" + c.vet.get(i).getTipo());
+            System.out.println("ALUGUEL=" + c.vet.get(i).getAluguel());
+            System.out.println("BAIRRO=" + c.vet.get(i).getBairro());
+            System.out.println("STATUS=" + c.vet.get(i).getStatus());
             System.out.println("______________________________________");
         }
     }
@@ -105,26 +102,24 @@ public class ArrayListP2 {
     public static void alugar() {
 
         int codp = 0, i = 0;
-        Campos c = new Campos();
 
         System.out.println("CÓDIGO DO IMÓVEL A SER ALUGADO");
         codp = leia.nextInt();
-        if (codp == (Campos.vet.get(i).getCod())) {
+        if (codp == (c.vet.get(i).getCod())) {
             System.out.println("STATUS ATUALIZADO - LOCAÇÃO EFETUADA!");
-            Campos.vet.get(i).setStatus("alugado");
+            c.vet.get(i).setStatus("alugado");
         }
     }
 
     public static void devolver() {
 
         int codp = 0, i = 0;
-        Campos c = new Campos();
 
         System.out.println("CÓDIGO DO IMÓVEL A SER DEVOLVIDO");
         codp = leia.nextInt();
-        if (codp == (Campos.vet.get(i).getCod())) {
+        if (codp == (c.vet.get(i).getCod())) {
             System.out.println("STATUS ATUALIZADO - DEVOLUÇÃO EFETUADA!");
-            Campos.vet.get(i).setStatus("disponivel");
+            c.vet.get(i).setStatus("disponivel");
         }
     }
 }

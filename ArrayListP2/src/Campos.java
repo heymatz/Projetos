@@ -5,7 +5,7 @@ public class Campos {
     double aluguel;
     String tipo, status, bairro;
 
-    public static ArrayList<Campos> vet = new ArrayList<>();
+    public ArrayList<Campos> vet = new ArrayList<>();
     public Object getStatus;
 
     public String getTipo() {
