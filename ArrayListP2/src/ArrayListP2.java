@@ -49,7 +49,6 @@ public class ArrayListP2 {
 
     public static void salvar() {
 
-        int i = 0;
         int codrep = c.getCod();
 
         System.out.println(" CÓDIGO ");
@@ -63,32 +62,36 @@ public class ArrayListP2 {
         System.out.println(" STATUS ");
         c.setStatus(leia.next());
 
-        // loop sobre códigos repetidos
-        for (int j = 0; j <= c.vet.size(); ++j) {
-            if (codrep == c.vet.get(j).getCod()) {
-                System.out.println("ERRO AO SALVAR, CÓDIGO JÁ UTILIZADO.");
-                System.out.println("______________________________________");
-            } else {
-                c.vet.add(c);
-            }
-        }
-
         // identificando e aplicando acréscimo sobre o tipo
         String tipo1 = "residencial";
         String tipo2 = "galpao";
         String tipo3 = "comercial";
-        double soma1 = c.getAluguel() * 5 / 100;
-        double soma2 = c.getAluguel() * 10 / 100;
-        double soma3 = c.getAluguel() * 15 / 100;
+        double soma1 = c.getAluguel() + (c.getAluguel() * 5) / 100;
+        double soma2 = c.getAluguel() + (c.getAluguel() * 10) /100;
+        double soma3 = c.getAluguel() + (c.getAluguel() * 15) /100;
 
         if (tipo1.equalsIgnoreCase(c.getTipo())) {
-            c.vet.get(i).setAluguel(soma1);
+            c.setAluguel(soma1);
         }
         if (tipo2.equalsIgnoreCase(c.getTipo())) {
-            c.vet.get(i).setAluguel(soma2);
+            c.setAluguel(soma2);
         }
         if (tipo3.equalsIgnoreCase(c.getTipo())) {
-            c.vet.get(i).setAluguel(soma3);
+            c.setAluguel(soma3);
+        }
+
+        if (c.vet.size() != 0) {
+            // loop sobre códigos repetidos
+            for (int j = 0; j <= c.vet.size(); ++j) {
+                if (codrep == c.vet.get(j).getCod()) {
+                    System.out.println("ERRO AO SALVAR, CÓDIGO JÁ UTILIZADO.");
+                    System.out.println("____________________________________");
+                } else {
+                    c.vet.add(c);
+                }
+            }
+        } else {
+            c.vet.add(c);
         }
     }
 
