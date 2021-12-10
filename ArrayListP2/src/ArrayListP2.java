@@ -9,7 +9,7 @@ public class ArrayListP2 {
 
         int resp, i = 0;
 
-        System.out.println("Escolha a opção desejada \n"
+        System.out.println("Escolha a opção desejada: \n"
                 + "1-Cadastrar um imóvel \n"
                 + "2-Visualizar alugados\n"
                 + "3-Visualizar disponíveis \n"
@@ -34,7 +34,8 @@ public class ArrayListP2 {
             if (resp == 5) {
                 devolver();
             }
-            System.out.println("Escolha a opção desejada \n 1-Cadastrar um imóvel \n"
+            System.out.println("Escolha a opção desejada: \n"
+                    + "1-Cadastrar um imóvel \n"
                     + "2-Visualizar alugados \n"
                     + "3-Visualizar disponíveis \n"
                     + "4-Realizar locação \n"
@@ -67,8 +68,8 @@ public class ArrayListP2 {
         String tipo2 = "galpao";
         String tipo3 = "comercial";
         double soma1 = c.getAluguel() + (c.getAluguel() * 5) / 100;
-        double soma2 = c.getAluguel() + (c.getAluguel() * 10) /100;
-        double soma3 = c.getAluguel() + (c.getAluguel() * 15) /100;
+        double soma2 = c.getAluguel() + (c.getAluguel() * 10) / 100;
+        double soma3 = c.getAluguel() + (c.getAluguel() * 15) / 100;
 
         if (tipo1.equalsIgnoreCase(c.getTipo())) {
             c.setAluguel(soma1);
