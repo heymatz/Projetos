@@ -1,0 +1,15 @@
+1
+1
+residencial
+100
+centro
+alugado
+1
+2
+galpao
+150
+vilinha
+alugado
+2
+6
+

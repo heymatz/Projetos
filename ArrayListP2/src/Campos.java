@@ -1,12 +1,22 @@
-import java.util.ArrayList;
 
 public class Campos {
-    int cod;
-    double aluguel;
-    String tipo, status, bairro;
+    private int cod;
+    private double aluguel;
+    private String tipo, status, bairro;
 
-    public ArrayList<Campos> vet = new ArrayList<>();
-    public Object getStatus;
+    public void calcAjusteAluguel() {
+        switch (this.tipo) {
+            case "residencial":
+                this.setAluguel(this.aluguel * 1.05);
+                break;
+            case "galpao":
+                this.setAluguel(this.aluguel * 1.10);
+                break;
+            case "comercial":
+                this.setAluguel(this.aluguel * 1.15);
+                break;
+        }
+    }
 
     public String getTipo() {
         return tipo;
