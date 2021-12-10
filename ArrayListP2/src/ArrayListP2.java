@@ -50,6 +50,7 @@ public class ArrayListP2 {
     public static void salvar() {
 
         int i = 0;
+        int codrep = c.getCod();
 
         System.out.println(" CÓDIGO ");
         c.setCod(leia.nextInt());
@@ -62,7 +63,33 @@ public class ArrayListP2 {
         System.out.println(" STATUS ");
         c.setStatus(leia.next());
 
-        c.vet.add(c);
+        // loop sobre códigos repetidos
+        for (int j = 0; j <= c.vet.size(); ++j) {
+            if (codrep == c.vet.get(j).getCod()) {
+                System.out.println("ERRO AO SALVAR, CÓDIGO JÁ UTILIZADO.");
+                System.out.println("______________________________________");
+            } else {
+                c.vet.add(c);
+            }
+        }
+
+        // identificando e aplicando acréscimo sobre o tipo
+        String tipo1 = "residencial";
+        String tipo2 = "galpao";
+        String tipo3 = "comercial";
+        double soma1 = c.getAluguel() * 5 / 100;
+        double soma2 = c.getAluguel() * 10 / 100;
+        double soma3 = c.getAluguel() * 15 / 100;
+
+        if (tipo1.equalsIgnoreCase(c.getTipo())) {
+            c.vet.get(i).setAluguel(soma1);
+        }
+        if (tipo2.equalsIgnoreCase(c.getTipo())) {
+            c.vet.get(i).setAluguel(soma2);
+        }
+        if (tipo3.equalsIgnoreCase(c.getTipo())) {
+            c.vet.get(i).setAluguel(soma3);
+        }
     }
 
     public static void buscaralugados() {
@@ -101,7 +128,8 @@ public class ArrayListP2 {
 
     public static void alugar() {
 
-        int codp = 0, i = 0;
+        int codp = 0;
+        int i = 0;
 
         System.out.println("CÓDIGO DO IMÓVEL A SER ALUGADO");
         codp = leia.nextInt();
@@ -113,7 +141,8 @@ public class ArrayListP2 {
 
     public static void devolver() {
 
-        int codp = 0, i = 0;
+        int codp = 0;
+        int i = 0;
 
         System.out.println("CÓDIGO DO IMÓVEL A SER DEVOLVIDO");
         codp = leia.nextInt();
